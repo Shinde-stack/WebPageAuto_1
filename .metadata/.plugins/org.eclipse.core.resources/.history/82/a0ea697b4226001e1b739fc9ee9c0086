@@ -1,0 +1,42 @@
+package a_autoPractice;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import com.github.dockerjava.api.model.Driver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class DropdownHandling {
+
+	public static void manageDropdown () throws InterruptedException {
+		
+	
+	WebDriverManager.chromedriver().setup();
+	WebDriver dr = new ChromeDriver();
+	
+	dr.manage().window().maximize();
+	dr.get("https://demo.guru99.com/test/newtours/register.php");
+	Thread.sleep(3000);
+//
+	WebElement country_Dropdown = dr.findElement(By.xpath("//select[@name='country']"));
+
+	JavascriptExecutor jse= ((JavascriptExecutor)dr);
+	jse.executeScript("addArguments[0].scrollIntoView(true)",country_Dropdown);
+	Thread.sleep(3000);
+
+	 Select select = new Select(country_Dropdown);
+	 select.selectByVisibleText("ANGOLA");
+	 
+	 List<WebElement>allOptions = select.getOptions();
+	 System.out.println(allOptions);
+	
+	
+	}
+}

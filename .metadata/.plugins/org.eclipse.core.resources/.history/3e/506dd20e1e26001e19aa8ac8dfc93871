@@ -1,0 +1,40 @@
+package utility;
+
+import java.time.Duration;
+
+import org.apache.commons.compress.harmony.unpack200.bytecode.ExceptionsAttribute;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.github.dockerjava.api.model.Driver;
+
+import io.netty.util.internal.shaded.org.jctools.util.Pow2;
+
+public class WaitsInSelenium {
+
+	// Implicit wait.....................
+	
+			driver.manage().timeouts().implicitlyWait(2000,TimeUnit.MILLISECONDS);
+			
+			
+	 // Explicit wait.....................
+		
+		    
+		    WebDriverWait wait= new WebDriverWait (driver,Duration.ofMillis(3000));
+		    wait.until(ExpectedConditions.visibilityOf(WE));
+		
+		
+	// Fluent wait..........................
+		
+		    FluentWait <WebDriver> wait2= new FluentWait <WebDriver>(driver); 
+		    wait2.withTimeout(Duration.ofMillis(2000));
+		    wait2.pollingEvery(Duration.ofMillis(500));
+		    wait2.ignoring(Exception.class);
+		    wait2.until(ExpectedConditions.visibilityOf(we)); 
+		
+	}
+	
+}

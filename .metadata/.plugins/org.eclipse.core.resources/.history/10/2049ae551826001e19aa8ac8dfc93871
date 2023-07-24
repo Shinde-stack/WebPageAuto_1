@@ -1,0 +1,20 @@
+package utility;
+
+import java.io.File;
+
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+public class Parametrization {
+
+//"E:\1.2.gitRepo\webPageAuto\src\test\resources\DataForSelenium.xlsx"
+	
+	public static String sheetDataString () {
+		
+		String filePath= System.getProperty("user.dir")+File.separator+"src"+File.separator+"test"+File.separator+"resources"+File.";
+		File file = new File();
+		WorkbookFactory.create(file);
+		
+		
+		
+	}
+}

@@ -1,0 +1,22 @@
+package utility;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.github.dockerjava.api.model.Driver;
+
+import io.netty.util.internal.shaded.org.jctools.util.Pow2;
+
+public class WaitsInSelenium {
+
+	// Explicit wait
+	public static void explicitWait (WebDriver driver) {
+		
+		WebDriverWait w2= new WebDriverWait(driver,Duration.ofMillis(3000));
+	
+		w2.expe
+	}
+	
+}

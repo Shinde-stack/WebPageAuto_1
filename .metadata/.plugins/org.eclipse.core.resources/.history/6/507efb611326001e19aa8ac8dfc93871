@@ -1,0 +1,36 @@
+package utility;
+
+import java.io.File;
+import java.io.IOException;
+import java.security.PublicKey;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.io.FileHandler;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class TakeScreenshot {
+
+     public static String captureScreenshot(WebDriver driver,String scName) {
+    	 
+    	File fileSource= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+    	 
+    	String scPath =System.getProperty("user.dir")+File.separator+"myScreenshots"+File.separator+scName+".png";
+
+    	File fileDest= new File(scPath);
+    	
+    	try 
+    	{
+			FileHandler.copy(fileSource, fileDest);
+		} 
+    	catch (IOException e) 
+    	{
+			e.printStackTrace();
+		}
+    	
+    	 return scPath;
+     }
+}

@@ -1,0 +1,17 @@
+package other;
+
+import baseClass.OpenBrowser;
+
+public class TestingClasss {
+
+	public static void main(String[] args) {
+		
+		
+		OpenBrowser.launchEdge("https://demoblaze.com/index.html");
+		
+		
+		
+		
+		
+	}
+}

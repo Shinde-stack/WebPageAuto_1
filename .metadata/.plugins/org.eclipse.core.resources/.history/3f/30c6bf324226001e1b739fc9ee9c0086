@@ -1,0 +1,13 @@
+package a_autoPractice;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class DropdownHandling {
+
+	public static void manageDropdown () {
+		
+	
+	WebDriverManager.chromedriver().setup();
+	
+	}
+}

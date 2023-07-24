@@ -1,0 +1,7 @@
+package a_autoPractice;
+
+
+public class DropdownHandling {
+
+	WebDriverManager.chromeDriver().setup();
+}

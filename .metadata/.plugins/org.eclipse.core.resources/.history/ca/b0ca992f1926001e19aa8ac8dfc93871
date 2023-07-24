@@ -1,0 +1,21 @@
+package z_codeTest;
+
+import org.openqa.selenium.WebDriver;
+
+import baseClass.OpenBrowser;
+import utility.TakeScreenshot;
+
+public class TestingClasss {
+
+	public static void main(String[] args) {
+		
+		WebDriver driver = null;
+		
+		OpenBrowser.launchEdge("https://demoblaze.com/index.html");
+		OpenBrowser.launchChrome("https://www.facebook.com/");
+		TakeScreenshot.captureScreenshot_file(driver, "ok");
+		
+		
+		
+	}
+}

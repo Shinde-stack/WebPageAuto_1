@@ -1,0 +1,67 @@
+package a_autoPractice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import baseClass.OpenBrowser;
+
+public class ActionsClass {
+
+	static WebDriver driver;
+	
+	public static void keyboardActions() throws InterruptedException {
+
+		driver = OpenBrowser.launchChrome("https://demoqa.com/text-box");
+		Thread.sleep(3000);
+		
+		WebElement fullNameTextBox = driver.findElement(By.xpath("//input[@id='userName']"));
+		fullNameTextBox.sendKeys("shinde p r");
+		
+		Actions act = new Actions (driver);
+		
+		act.sendKeys(Keys.TAB);
+		act.perform();
+		act.keyDown("shinde@gmail.com");
+		act.sendKeys(Keys.TAB);
+		act.perform();
+
+		
+		act.sendKeys("this is my address.....");
+
+		act.keyDown(Keys.CONTROL);
+		act.sendKeys("a");
+		act.keyUp(Keys.CONTROL);
+        act.build().perform();
+		
+		act.keyDown(Keys.CONTROL);
+		act.sendKeys("c");
+		act.keyUp(Keys.CONTROL);
+        act.build().perform();
+		
+		act.sendKeys(Keys.TAB);
+        act.perform();
+
+		
+		act.keyDown(Keys.CONTROL);
+		act.sendKeys("v");
+		act.keyUp(Keys.CONTROL);
+        act.build().perform();
+
+
+
+		
+		
+	}
+
+	public static void mouseActions() {
+
+	}
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		ActionsClass.keyboardActions();
+	}
+}
